@@ -1,2 +1,0 @@
-# AngularHero
-angular tutorial
