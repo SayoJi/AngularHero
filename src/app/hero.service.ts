@@ -4,9 +4,9 @@ import { HEROS } from './mock-hero';
 
 @Injectable()
 export class HeroService{
-
-    getHeros() : Hero[]{
-        return HEROS;
+    //get the data from asynchronous
+    getHeros() : Promise<Hero[]>{
+        return Promise.resolve(HEROS);
     }
 
 }

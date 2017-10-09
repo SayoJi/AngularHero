@@ -28,11 +28,20 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    this.heros = this.heroService.getHeros();
+    this.getHeroes();
   }
 
   onSelected(hero : Hero): void{
     this.selectedHero = hero;
+  }
+
+  getHeroes(){
+    this.heroService.getHeros().then(heros => this.heros = heros);
+    // this.heroService.getHeros().then(
+    //   function (heros){
+    //     this.heros = heros;
+    //   }
+    // )
   }
 }
 
