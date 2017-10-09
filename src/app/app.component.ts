@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit } from '@angular/core';
 import { Hero } from './hero.component';
 import { HeroService } from './hero.service';
 
@@ -25,6 +25,10 @@ export class AppComponent {
   //Injectable
   constructor(private heroService : HeroService){
 
+  }
+
+  ngOnInit(){
+    this.heros = this.heroService.getHeros();
   }
 
   onSelected(hero : Hero): void{
