@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Hero } from './hero';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { HeroService } from './hero.service';
+import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -24,6 +25,6 @@ export class HeroDetaiComponent implements OnInit {
 
   // go back button
   goBack(): void {
-    // this.location.back();
+    this.location.back();
   }
 }
