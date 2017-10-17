@@ -8,6 +8,10 @@ export class HeroService {
     getHeros(): Promise<Hero[]> {
         return Promise.resolve(HEROS);
     }
+    // get hero by id
+    getHero(id: number): Promise<Hero> {
+        return this.getHeros().then(heros => heros.find(hero => hero.id === id));
+    }
     // simulate server latency eith 2 second.
     getHerosSlowly(): Promise<Hero[]> {
         return new Promise(resolve => {
