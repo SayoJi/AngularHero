@@ -3,7 +3,8 @@ import { Hero } from './hero';
 import { HeroService } from './hero.service';
 
 @Component({
-    templateUrl : 'dashboard.component.html'
+    templateUrl : 'dashboard.component.html',
+    styleUrls : ['dashboard.component.css'],
 })
 
 export class DashboardComponent implements OnInit {
