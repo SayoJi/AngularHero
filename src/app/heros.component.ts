@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   // selector: 'app-heros-list',
   templateUrl: 'heros.component.html',
-  styleUrls : ['heros.component.css']
+  styleUrls : ['./heros.component.css']
 })
 export class HerosComponent implements OnInit {
   heros: Hero[];
