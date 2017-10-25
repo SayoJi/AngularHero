@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class HeroService {
-  private heroUrl = 'api/heroes'; // web api Url
+  private heroUrl = 'api/heros'; // web api Url
   constructor(private http: Http) {
   }
     // get the data from asynchronous
@@ -23,7 +23,11 @@ export class HeroService {
     }
     // get hero by id
     getHero(id: number): Promise<Hero> {
-        return this.getHeros().then(heros => heros.find(hero => hero.id === id));
+        const url = `${this.heroUrl}/:${id}`;
+        return this.http.get(url)
+        .toPromise().then(response => response.json().data as Hero)
+        .catch(this.handleError);
+        // return this.getHeros().then(heros => heros.find(hero => hero.id === id));
     }
     // simulate server latency eith 2 second.
     getHerosSlowly(): Promise<Hero[]> {
