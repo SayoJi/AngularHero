@@ -1,0 +1,23 @@
+<form class="create-role">
+  <div>
+    <!--role code-->
+    <label class="">Role Code: </label>
+    <p-multiSelect [options]="codes" [panelStyle]="{minWidth:'20em'}"
+      [(ngModel)]="selectedCodes" name="role-code-select" optionLabel="name">
+    </p-multiSelect>
+    <p>Selected Role Codes: {{selectedCodes}}</p>
+  </div>
+  <div float="left">
+    <!--role description-->
+    <label>Description: </label>
+    <input type="text" class="" value="role description"/>
+  </div>
+  <div float="left" display:inline>
+    <label>Role Parent: </label>
+    <!--role parent-->
+    <select>
+      <option *ngFor = "let role of roles" value={{role.name}}>{{role.name}}</option>
+    </select>
+  </div>
+  <div><button type="submit" >Submit</button></div>
+</form>
